@@ -1,0 +1,403 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jan 14, 2025, 4:01:17 PM
+    Author     : LENOVO
+*/
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2193b0, #6dd5ed);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Animated background elements */
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float 10s infinite ease-in-out;
+    z-index: -1;
+}
+
+body::before {
+    top: -150px;
+    left: -150px;
+}
+
+body::after {
+    bottom: -150px;
+    right: -150px;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(50px, 50px); }
+}
+
+/* Main heading */
+h1 {
+    color: #fff;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 2.2em;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Back to Dashboard link */
+a[href*="Dashboard"] {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #2193b0;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 20px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+a[href*="Dashboard"]:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Container styles */
+.form-container,
+.list-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 1200px;
+    backdrop-filter: blur(10px);
+}
+
+/* Section headings */
+h2 {
+    color: #2193b0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #2193b0;
+    border-radius: 2px;
+}
+
+/* Form styles */
+form {
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+td {
+    padding: 12px;
+    vertical-align: middle;
+}
+
+/* Label styles */
+td:first-child {
+    color: #333;
+    font-weight: 500;
+    width: 120px;
+}
+
+/* Input styles */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #2193b0;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.1);
+}
+
+/* Button styles */
+button,
+input[type="submit"] {
+    background: linear-gradient(135deg, #2193b0, #6dd5ed);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background: linear-gradient(135deg, #1c7a94, #5bb9d4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(33, 147, 176, 0.2);
+}
+
+.button-cell {
+    text-align: right;
+}
+
+/* Table styles */
+.table-responsive {
+    overflow-x: auto;
+}
+
+table[border="1"] {
+    border: none;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+}
+
+table[border="1"] th {
+    background: #2193b0;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 500;
+}
+
+table[border="1"] td {
+    border-bottom: 1px solid #eee;
+    padding: 12px 15px;
+}
+
+table[border="1"] tr:last-child td {
+    border-bottom: none;
+}
+
+table[border="1"] tr:hover {
+    background: rgba(33, 147, 176, 0.05);
+}
+
+/* Priority colors */
+.priority-high {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.priority-medium {
+    color: #ffc107;
+    font-weight: 600;
+}
+
+.priority-low {
+    color: #28a745;
+    font-weight: 600;
+}
+
+/* Status styles */
+.status-pending::before {
+    content: '⏳';
+    margin-right: 5px;
+}
+
+.status-completed::before {
+    content: '✅';
+    margin-right: 5px;
+}
+
+.status-in_progress::before {
+    content: '🔄';
+    margin-right: 5px;
+}
+
+/* Action buttons */
+.actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.view-btn {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+}
+
+.edit-btn {
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+}
+
+.delete-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ffa502);
+}
+
+.cancel-btn {
+    background: #6c757d;
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 600px;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Animation for modals */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -48%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.modal {
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .form-container,
+    .list-container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .actions button,
+    .actions form {
+        width: 100%;
+    }
+
+    td:first-child {
+        width: 100px;
+    }
+
+    .modal {
+        width: 95%;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2193b0;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1c7a94;
+}
+
+/* Form validation styles */
+input:invalid,
+textarea:invalid,
+select:invalid {
+    border-color: #ff6b6b;
+}
+
+input:valid,
+textarea:valid,
+select:valid {
+    border-color: #2ecc71;
+}
+
+/* Icons in form */
+.fa-eye,
+.fa-edit,
+.fa-trash,
+.fa-times {
+    font-size: 16px;
+}
